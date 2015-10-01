@@ -79,7 +79,7 @@ var ChatFrame = React.createClass({
 			})
 		})
 		var heading = React.createElement('h2', null, 'Your Chats')
-		var el = ['div', {className: 'chatFrame'}, heading]
+		var el = ['div', {className: 'chatFrame container-fluid row'}, heading]
 		el = el.concat(chats)
 		return (
 			React.createElement.apply(null, el)

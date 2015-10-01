@@ -1,0 +1,112 @@
+body{
+	background-color: #5D6162;
+	color: #E2F2FF;
+}
+
+input, select{
+	color: #5D6162;
+}
+
+/*Header Styles*/
+.header-bar{
+	border: 1px solid #E2F2FF;
+	padding: 5px;
+}
+
+label{
+	margin-right: 10px;
+}
+
+h2{
+	border-bottom: 1px solid #E2F2FF;
+}
+
+
+/*Chat Box Styles*/
+.chatBox{
+	border: 1px solid #E2F2FF;
+	height: 40vh;
+	padding: 3px;
+}
+.chat{
+	width: 100%;
+	height: 27vh;
+	overflow: scroll;
+}
+
+.chatTitle{
+	height: 4vh;
+	font-weight: strong;
+	margin: 5px 5px;
+}
+
+.chatHR{
+	margin-top:5px;
+	margin-bottom: 5px;
+}
+
+.messageInput{
+	height: 2em;
+	border: 1px solid black;
+	width: 100%;
+}
+
+.meName{
+	font-size: 1.2em;
+	color: #89CFFF;
+	margin-left: 5px;
+	display: block;
+}
+
+.me{
+	text-align: right;
+}
+
+.text{
+	white-space: wrap;
+	word-wrap: break-word;
+}
+
+.friendName{
+	color: #89E99B;
+	margin-right: 5px;
+	font-size: 1.2em;
+	display: block;
+}
+
+.chat .message:nth-child(odd){
+	background-color: #F6FFF9;
+	color: #5D6162;
+}
+
+.date{
+	display: block;
+	font-size: 0.5em;
+}
+
+.deleteChat{
+	float: right;
+	font-size: 0.8em;
+	border-radius: 10px;
+	margin: 0px 0px;
+}
+
+
+/*login styles*/
+.loginApp{
+	margin-top: 30px;
+	padding: 10px;
+	text-align: center;
+}
+
+.loginInput{
+	margin-right: 20px;
+}
+
+.error{
+	background-color: #F23414;
+	color: #F5FAE5;
+	border-radius: 20%;
+	margin-top: 30px;
+	padding: 5px;
+}

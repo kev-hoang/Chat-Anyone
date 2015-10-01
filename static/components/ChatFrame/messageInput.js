@@ -24,7 +24,8 @@ var MessageInput = React.createClass({
 				"placeholder": 'Enter Message',
 				onChange: this.changeHandler,
 				value: this.state.text,
-				onSubmit: this.sendMessage
+				onSubmit: this.sendMessage,
+				className: 'messageInput'
 			}
 		var input = React.createElement('input', props)
 		

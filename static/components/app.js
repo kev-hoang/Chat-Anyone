@@ -19,9 +19,10 @@ var App = React.createClass({
 		this.setState({onlineUsers: data.users})
 	},
 	render: function(){
-		var header = React.createElement(Header, {username: this.state.user, users: this.state.onlineUsers})
+		var header = React.createElement(Header)
+		var headerBar = React.createElement(HeaderBar, {username: this.state.user, users: this.state.onlineUsers})
 		var chatFrame = React.createElement(ChatFrame, {user: this.state.user})
-		var app = React.createElement('div', null, header, chatFrame)
+		var app = React.createElement('div', null, header, headerBar, chatFrame)
 		return (
 			app
 		);

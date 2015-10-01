@@ -24,20 +24,19 @@ def test_disconnect():
 		user = session['user']
 		users.remove(user)
 		leave_room(user)
-	except KeyError:
-		print('Key Error')
+	except (KeyError, ValueError) as e:
+		print('There was an error =(')
 	print(users)
 	emit('userLeft', {'users': sorted(users)}, broadcast=True)
 
 #checks if username already exists
 @socketio.on('userCheck', namespace='/chat')
 def check(data):
-	index = None
 	try:
-		index = users.index(data['user'])
+		users.index(data['user'])
+		emit('loginError')
 	except ValueError:
-		index = -1
-	emit('userChecked', {'exists': index})
+		emit('loginSuccess', {'username': data['user']})
 
 #join chat server, join room of username
 @socketio.on('join', namespace='/chat')
@@ -63,4 +62,4 @@ def newMessage(data):
 
 
 if __name__ == "__main__":
-	socketio.run(app)
+	socketio.run(app, host='0.0.0.0', port=8080)

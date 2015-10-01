@@ -4,7 +4,7 @@ var DeleteButton = React.createClass({
 	render: function(){
 		return (
 			React.createElement('button',{
-				'className': 'btn-danger',
+				'className': 'btn-danger deleteChat',
 				onClick: this.props.handleClick
 			}, 'x')
 		);

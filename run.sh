@@ -2,7 +2,7 @@
 
 #make executable
 #chmod +x run.sh
-python app.py
+# python app.py
 
 #nodemon version to watch changes
-#nodemon --exec "python -v" ./app.py
+nodemon --exec "python -v" ./app.py

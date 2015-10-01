@@ -22,27 +22,11 @@ router.on('route:home', function(){
 // Checks if username already exists on server.
 
 router.on('route:login', function(){
-	var username
-	var usernameHandler = function(e){
-		username = e.target.value
-	}
-	var login = function(){
-		socket.emit('userCheck', {user: username})
-		socket.on('userChecked', function(data){
-			if(data.exists < 0){
-				localStorage.user = username
-				window.location.href = '/#'	
-			}else{
-				window.location.href = '/#/login'	
-				alert('Username already exists!\nPlease enter a unique username.')
-			}
-		})
-	}
-	var title = React.createElement('h2', null, 'Please Log In with a Username First.')
-	var signup = React.createElement('input', {type: 'text', placeholder:'Enter Username Here', onChange: usernameHandler})
-	var submit = React.createElement('input', {type: 'submit', value: 'Log In'})
-	var app = React.createElement('form', {onSubmit: login}, title, signup, submit)
-	React.render(app, document.getElementById('app'))
+	socket.on('loginSuccess', function(data){
+		localStorage.user = data.username
+		window.location.href = '/#'	
+	})
+	React.render(React.createElement(Login), document.getElementById('app'))
 })
 
 Backbone.history.start()

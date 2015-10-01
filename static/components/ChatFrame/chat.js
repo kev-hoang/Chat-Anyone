@@ -5,13 +5,25 @@ var ChatMessages = React.createClass({
 	getInitialState: function(){
 		return {
 			chat: this.props.chat,
-			me: this.props.me
+			me: this.props.me,
+			chatWith: this.props.chatWith
 		}
 	},
 	componentWillReceiveProps: function(nextProps) {
 	  this.setState({
 	    chat: nextProps.chat
 	  });
+	},
+	componentWillUpdate: function() {
+	  var node = this.getDOMNode();
+	  this.shouldScrollBottom = node.scrollTop + node.offsetHeight >= node.scrollHeight-50;
+	},
+	 
+	componentDidUpdate: function() {
+	  if (this.shouldScrollBottom) {
+	    var node = this.getDOMNode();
+	    node.scrollTop = node.scrollHeight+10000
+	  }
 	},
 	render: function(){
 		var me = this.state.me
@@ -24,7 +36,10 @@ var ChatMessages = React.createClass({
 			})
 		})
 		
-		var el = ['div', {className: 'chat'}]
+		var el = ['div', {
+			className: 'chat',
+			id: 'chat-'+this.state.chatWith+'-messages'
+		}]
 		el = el.concat(messages)
 		return (
 			React.createElement.apply(null, el)

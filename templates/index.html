@@ -2,17 +2,16 @@
 <html lang="en">
  
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Chat Anyone</title>
     <!-- bootstrap -->
-    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/lib/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- custom css -->
-    <link src="template/style.css" rel="stylesheet">
+    <link href="static/style.css" rel="stylesheet">
 </head>
  
 <body>
-    <h1>Chat Anyone</h1>
-    <hr>
-    <div id='app'>
+    <div class='container' id='app'>
     </div>
     <!-- Library -->
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -25,6 +24,7 @@
     <!-- Header Files -->
     <script src="static/components/Header/username.js"></script>
     <script src="static/components/Header/userSelect.js"></script>
+    <script src="static/components/Header/headerBar.js"></script>
     <script src="static/components/Header/header.js"></script>
     <!-- Chat Files -->
     <script src="static/components/ChatFrame/message.js"></script>
@@ -33,8 +33,10 @@
     <script src="static/components/ChatFrame/chat.js"></script>
     <script src="static/components/ChatFrame/chatBox.js"></script>
     <script src="static/components/ChatFrame/chatFrame.js"></script>
-
-    <!-- React -->
+    <!-- Login Page -->
+    <script src="static/components/errorMessage.js"></script>
+    <script src="static/components/login.js"></script>
+    <!-- Home Page / Chat App -->
     <script src="static/components/app.js"></script>
     <!-- Backbone -->
     <script src="static/main.js"></script>

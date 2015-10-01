@@ -32,22 +32,24 @@ var ChatBox = React.createClass({
 	},
 	render: function(){
 		var deleteChat = React.createElement(DeleteButton, {handleClick: this.state.handleDelete})
-		var title = React.createElement('h3',{className: 'chatTitle'}, this.state.chatWith, deleteChat)
+		var title = React.createElement('h4',{className: 'chatTitle'}, this.state.chatWith, deleteChat)
+		var hr = React.createElement('hr',{className: 'chatHR'})
 		var chat = React.createElement(ChatMessages, {
 			chat: this.state.chat,
-			me: this.state.user
+			me: this.state.user,
+			chatWith: this.state.chatWith
 		})
 		var input = React.createElement(MessageInput, {
 			user: this.state.user,
 			onMessageSubmit: this.sendMessage
 		})
 		var props = {
-			className: 'chatBox',
+			className: 'chatBox col-xs-12 col-sm-4 col-md-3 col-lg-2',
 			id: 'chat-' + this.state.chatWith
 		}
 
 		return (
-			React.createElement('div', props, title, chat, input)
+			React.createElement('div', props, title, hr, chat, input)
 		);
 	}
 })

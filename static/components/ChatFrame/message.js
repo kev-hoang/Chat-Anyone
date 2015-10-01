@@ -17,13 +17,12 @@ var Message = React.createClass({
     });
   },
   render: function() {
+    var person = this.state.user === this.state.me ? 'me':'friend'
   	var name = React.createElement('strong', {
-      className: this.state.user === this.state.me ? 'me':'friend'
-    }, this.state.user + ': ')
+      className: person + 'Name'
+    }, this.state.user)
   	var text = React.createElement('span', {className: 'text'}, this.state.text)
     var date = React.createElement('span', {className: 'date'}, this.state.date)
-      return (
-      	React.createElement('div', {className: 'message'}, name, text, date)
-      )
+    return React.createElement('div', {className: 'message ' + person}, date, name, text)
   }
 })
