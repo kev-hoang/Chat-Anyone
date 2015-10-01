@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>Chat Anyone</title>
+    <!-- bootstrap -->
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- custom css -->
+    <link src="template/style.css" rel="stylesheet">
+</head>
+ 
+<body>
+    <h1>Chat Anyone</h1>
+    <hr>
+    <div id='app'>
+    </div>
+    <!-- Library -->
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.16/socket.io.min.js"></script>
+    <script src="static/lib/underscore-min.js"></script> 
+    <script src="static/lib/backbone.js"></script>
+    <script type="text/javascript" src="static/lib/backbone.localStorage-min.js"></script>
+    <script src="static/lib/React/react-with-addons.js"></script>
+    <script src="static/lib/React/JSXTransformer.js"></script>
+    <!-- Header Files -->
+    <script src="static/components/Header/username.js"></script>
+    <script src="static/components/Header/userSelect.js"></script>
+    <script src="static/components/Header/header.js"></script>
+    <!-- Chat Files -->
+    <script src="static/components/ChatFrame/message.js"></script>
+    <script src="static/components/ChatFrame/deleteChat.js"></script>
+    <script src="static/components/ChatFrame/messageInput.js"></script>
+    <script src="static/components/ChatFrame/chat.js"></script>
+    <script src="static/components/ChatFrame/chatBox.js"></script>
+    <script src="static/components/ChatFrame/chatFrame.js"></script>
+
+    <!-- React -->
+    <script src="static/components/app.js"></script>
+    <!-- Backbone -->
+    <script src="static/main.js"></script>
+    <script src="static/router.js"></script>
+</body>
+ 
+</html>
