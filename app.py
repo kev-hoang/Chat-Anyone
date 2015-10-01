@@ -1,6 +1,5 @@
 from flask import Flask, render_template, jsonify, session, request
 from flask.ext.socketio import SocketIO, emit, join_room, leave_room
-from threading import Timer
 
 app = Flask(__name__)
 users = []
