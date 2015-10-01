@@ -63,4 +63,4 @@ def newMessage(data):
 
 
 if __name__ == "__main__":
-	socketio.run(app, host='192.168.0.16')
+	socketio.run(app)
