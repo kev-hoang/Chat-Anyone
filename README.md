@@ -7,11 +7,13 @@ This is a chat service without a server-side database. The data is stored in the
 
 ## Issues
 
-1. On refresh - socket connects before the previous one disconnects. Persistence can be shown if you leave a page and return after 5 seconds.
-2. Responsive design is a bit off. Need to adjust media sizes.
+1. If forked and hosting, please use your ip address and port 8080. For some reason, localhost is not serving my css.
+2. On refresh - socket connects before the previous one disconnects. Persistence can be shown if you leave a page and return after 5 seconds.
+3. Responsive design is a bit off. Need to adjust media sizes.
 
 ##Future Implementations
 
+0.5. Deploy to Heroku.
 1. Allow for name change. Right now you can do so by going into your localStorage.
 2. Notifications on user going offline in the middle of a chat.
 3. Delete chat history.
