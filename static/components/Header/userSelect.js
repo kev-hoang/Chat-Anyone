@@ -5,8 +5,8 @@
 var UserSelect = React.createClass({
 	getInitialState: function() {
         return {
-        	selected: '',
-        	users: this.props.users
+        	selected: ''
+        	// users: this.props.users
         }
       },
 	componentDidUpdate: function(prevProps, prevState){
@@ -14,11 +14,12 @@ var UserSelect = React.createClass({
 			socket.emit('chat', {with: this.state.selected})
 		}
 	},
-	componentWillReceiveProps: function(nextProps) {
-	  this.setState({
-	    users: nextProps.users
-	  });
-	},
+	// anti-pattern
+	// componentWillReceiveProps: function(nextProps) {
+	//   this.setState({
+	//     users: nextProps.users
+	//   });
+	// },
 	changeHandler: function(e) {
 		this.setState({selected : e.target.value })
 	},
@@ -28,7 +29,7 @@ var UserSelect = React.createClass({
 			{
 				className: 'users', 
 				value: this.state.selected, 
-				onChange: this.changeHandler
+				onSelect: this.changeHandler
 			},
 			React.createElement('option', {
 				disable: true,
@@ -37,7 +38,7 @@ var UserSelect = React.createClass({
 			})
 			]
 		
-		var x = this.state.users.map(function(user){
+		var x = this.props.users.map(function(user){
 			return React.createElement('option', {value: user}, user)
 		})
 		el = el.concat(x)

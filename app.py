@@ -15,6 +15,7 @@ def main():
 @socketio.on('connect', namespace='/chat')
 def on_connect():
 	print('Client Connected')
+	emit('connected')
 
 #socket disconnected
 @socketio.on('disconnect', namespace='/chat')

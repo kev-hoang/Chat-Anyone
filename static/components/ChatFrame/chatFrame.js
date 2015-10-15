@@ -6,8 +6,9 @@
 var ChatFrame = React.createClass({
 	getInitialState: function(){
 		return {
-			openChats: [],
-			user: this.props.user
+			openChats: []
+			// anti-pattern
+			// user: this.props.user
 		}
 	},
 	componentDidMount: function() {
@@ -68,7 +69,7 @@ var ChatFrame = React.createClass({
 		this.openChat(data)
 	},
 	render: function(){
-		var user = this.state.user
+		var user = this.props.user
 		var removeChat = this.removeChat
 		var chats = this.state.openChats.map(function(chat){
 			return React.createElement(ChatBox, {

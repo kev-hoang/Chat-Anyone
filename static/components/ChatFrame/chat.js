@@ -2,18 +2,19 @@
 // contains array of messages objects that turn to message components
 
 var ChatMessages = React.createClass({
-	getInitialState: function(){
-		return {
-			chat: this.props.chat,
-			me: this.props.me,
-			chatWith: this.props.chatWith
-		}
-	},
-	componentWillReceiveProps: function(nextProps) {
-	  this.setState({
-	    chat: nextProps.chat
-	  });
-	},
+	// anti-pattern
+	// getInitialState: function(){
+	// 	return {
+	// 		chat: this.props.chat,
+	// 		me: this.props.me,
+	// 		chatWith: this.props.chatWith
+	// 	}
+	// },
+	// componentWillReceiveProps: function(nextProps) {
+	//   this.setState({
+	//     chat: nextProps.chat
+	//   });
+	// },
 	componentWillUpdate: function() {
 	  var node = this.getDOMNode();
 	  this.shouldScrollBottom = node.scrollTop + node.offsetHeight >= node.scrollHeight-50;
@@ -26,8 +27,8 @@ var ChatMessages = React.createClass({
 	  }
 	},
 	render: function(){
-		var me = this.state.me
-		var messages = this.state.chat.map(function(message){
+		var me = this.props.me
+		var messages = this.props.chat.map(function(message){
 			return React.createElement(Message, {
 				user: message.user,
 				text: message.text,
@@ -38,7 +39,7 @@ var ChatMessages = React.createClass({
 		
 		var el = ['div', {
 			className: 'chat',
-			id: 'chat-'+this.state.chatWith+'-messages'
+			id: 'chat-'+this.props.chatWith+'-messages'
 		}]
 		el = el.concat(messages)
 		return (

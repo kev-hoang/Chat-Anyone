@@ -2,13 +2,14 @@ var MessageInput = React.createClass({
 	getInitialState: function(){
 		return {
 			text:"",
-			user: this.props.user
+			// anti-pattern
+			// user: this.props.user
 		}
 	},
 	handleSubmit: function(e){
 		e.preventDefault()
 		var message = {
-			user: this.state.user,
+			user: this.props.user,
 			text: this.state.text,
 			date: Date.now()
 		}

@@ -3,14 +3,15 @@
 // plan on making an accompanying button to allow change on username
 
 var UsernameField = React.createClass({
-	getInitialState: function(){
-		return {username: this.props.username}
-	},
-	componentWillReceiveProps: function(nextProps) {
-	  this.setState({
-	    username: nextProps.username
-	  });
-	},
+	// anti-pattern
+	// getInitialState: function(){
+	// 	return {username: this.props.username}
+	// },
+	// componentWillReceiveProps: function(nextProps) {
+	//   this.setState({
+	//     username: nextProps.username
+	//   });
+	// },
 	render: function(){
 		var props = {
 				className: 'usernameField',
@@ -18,7 +19,7 @@ var UsernameField = React.createClass({
 				type: 'text',
 				placeholder: 'Enter Username',
 				disabled: true,
-				value: this.state.username
+				value: this.props.username
 			}
 		
 		return (
